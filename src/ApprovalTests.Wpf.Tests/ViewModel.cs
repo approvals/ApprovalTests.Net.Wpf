@@ -1,19 +1,20 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-class TestViewModel : INotifyPropertyChanged
+#region Model
+public class ViewModel : INotifyPropertyChanged
 {
     public event PropertyChangedEventHandler PropertyChanged = delegate { };
 
     public const string MyPropertyPropertyName = "MyProperty";
-    string _myProperty;
+    string myProperty;
 
     public string MyProperty
     {
-        get => _myProperty;
+        get => myProperty;
         set
         {
-            _myProperty = value;
+            myProperty = value;
             RaisePropertyChanged();
         }
     }
@@ -23,3 +24,4 @@ class TestViewModel : INotifyPropertyChanged
         PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
     }
 }
+#endregion

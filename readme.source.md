@@ -7,15 +7,18 @@ Extends [ApprovalTests](https://github.com/approvals/ApprovalTests.Net) for appr
 
 https://nuget.org/packages/ApprovalTests.Wpf/
 
-    PM> Install-Package ApprovalTests.Wpf
-
+```ps
+PM> Install-Package ApprovalTests.Wpf
+```
 
 ## Usage
 
+snippet: model
 
-snippet: usage
 
+### BindsWithoutError
 
+snippet: BindsWithoutError
 
 
 ## Links

@@ -3,12 +3,10 @@ using System.Text.RegularExpressions;
 using System.Windows.Controls;
 using System.Windows.Data;
 using ApprovalTests;
-using ApprovalTests.Reporters;
 using ApprovalTests.Wpf;
 using ApprovalUtilities.Utilities;
 using Xunit;
 
-[UseReporter(typeof(DiffReporter))]
 public class WpfBindingTests
 {
     [Fact]
@@ -17,8 +15,8 @@ public class WpfBindingTests
         Exception e = null;
         StaRunner.Start(() =>
         {
-            var viewModel = new TestViewModel();
-            var myBinding = new Binding(TestViewModel.MyPropertyPropertyName + "BOGUS")
+            var viewModel = new ViewModel();
+            var myBinding = new Binding(ViewModel.MyPropertyPropertyName + "BOGUS")
             {
                 Source = viewModel
             };
