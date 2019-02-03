@@ -13,10 +13,14 @@ PM> Install-Package ApprovalTests.Wpf
 
 ## Usage
 
+Given the following binding model:
+
 snippet: model
 
 
 ### BindsWithoutError
+
+The bindings can be verified using the following:
 
 snippet: BindsWithoutError
 

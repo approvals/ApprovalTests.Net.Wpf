@@ -13,6 +13,8 @@ PM> Install-Package ApprovalTests.Wpf
 
 ## Usage
 
+Given the following binding model:
+
 <!-- snippet: model -->
 ```cs
 public class ViewModel : INotifyPropertyChanged
@@ -44,10 +46,12 @@ public class ViewModel : INotifyPropertyChanged
 
 ### BindsWithoutError
 
+The bindings can be verified using the following:
+
 <!-- snippet: BindsWithoutError -->
 ```cs
 var viewModel = new ViewModel();
-var myBinding = new Binding(ViewModel.MyPropertyPropertyName + "BOGUS")
+var myBinding = new Binding(ViewModel.MyPropertyPropertyName)
 {
     Source = viewModel
 };
@@ -59,9 +63,9 @@ var exception = ExceptionUtilities.GetException(
             textBox.SetBinding(TextBox.TextProperty, myBinding);
             return textBox;
         }));
-Approvals.Verify(exception.Message, s => Regex.Replace(s, @"\(HashCode=\d+\)", "(Hashcode)"));
+Assert.Null(exception);
 ```
-<sup>[snippet source](/src/ApprovalTests.Wpf.Tests/WpfBindingTests - Copy.cs#L15-L32)</sup>
+<sup>[snippet source](/src/ApprovalTests.Wpf.Tests/Snippets.cs#L15-L32)</sup>
 <!-- endsnippet -->
 
 
