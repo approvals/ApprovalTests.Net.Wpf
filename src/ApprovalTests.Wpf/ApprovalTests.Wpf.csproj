@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net461</TargetFrameworks>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>WPF extensions for ApprovalTests.</Description>
+    <AssemblyInformationalVersion>$(Version)</AssemblyInformationalVersion>
+    <Authors>Llewellyn Falco &amp; Dan Gilkerson</Authors>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Copyright>Copyright $([System.DateTime]::UtcNow.ToString(yyyy)) Llewellyn Falco &amp; Dan Gilkerson. All rights reserved</Copyright>
+    <PackageTags>Wpf Approvals ApprovalTests ApprovalTest Test Verification Verify Approve Testing</PackageTags>
+    <PackageIconUrl>https://avatars3.githubusercontent.com/u/36907</PackageIconUrl>
+    <PackageProjectUrl>https://github.com/approvals/ApprovalTests.Net.Wpf</PackageProjectUrl>
+    <PackageOutputPath>$(SolutionDir)../nuget_packages</PackageOutputPath>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <DebugType>embedded</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="WindowsBase" />
+    <PackageReference Include="ApprovalTests" Version="3.0.18" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0-beta2-18618-05" PrivateAssets="All" />
+  </ItemGroup>
+</Project>
