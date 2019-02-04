@@ -1,4 +1,6 @@
 ﻿using System;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -30,5 +32,27 @@ public class WpfBindingTests
                     }));
         });
         Approvals.Verify(e.Message, s => Regex.Replace(s, @"\(HashCode=\d+\)", "(Hashcode)"));
+    }
+    class ViewModel : INotifyPropertyChanged
+    {
+        public event PropertyChangedEventHandler PropertyChanged = delegate { };
+
+        public const string MyPropertyPropertyName = "MyProperty";
+        string myProperty;
+
+        public string MyProperty
+        {
+            get => myProperty;
+            set
+            {
+                myProperty = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        void RaisePropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }

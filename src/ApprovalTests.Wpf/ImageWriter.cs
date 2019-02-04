@@ -12,17 +12,17 @@ namespace ApprovalTests.Wpf
             this.writer = writer;
         }
 
-        public string GetApprovalFilename(string basename)
+        public virtual string GetApprovalFilename(string basename)
         {
-            return basename + ".approved.png";
+            return $"{basename}.approved.png";
         }
 
-        public string GetReceivedFilename(string basename)
+        public virtual string GetReceivedFilename(string basename)
         {
-            return basename + ".received.png";
+            return $"{basename}.received.png";
         }
 
-        public string WriteReceivedFile(string received)
+        public virtual string WriteReceivedFile(string received)
         {
             writer(received);
             return received;
