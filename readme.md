@@ -21,7 +21,6 @@ public class ViewModel : INotifyPropertyChanged
 {
     public event PropertyChangedEventHandler PropertyChanged = delegate { };
 
-    public const string MyPropertyPropertyName = "MyProperty";
     string myProperty;
 
     public string MyProperty
@@ -40,7 +39,31 @@ public class ViewModel : INotifyPropertyChanged
     }
 }
 ```
-<sup>[snippet source](/src/ApprovalTests.Wpf.Tests/ViewModel.cs#L4-L27)</sup>
+<sup>[snippet source](/src/Tests/Snippets/BindsWithoutError - Copy.cs#L20-L44)</sup>
+```cs
+public class ViewModel : INotifyPropertyChanged
+{
+    public event PropertyChangedEventHandler PropertyChanged = delegate { };
+
+    string myProperty;
+
+    public string MyProperty
+    {
+        get => myProperty;
+        set
+        {
+            myProperty = value;
+            RaisePropertyChanged();
+        }
+    }
+
+    void RaisePropertyChanged([CallerMemberName] string propertyName = null)
+    {
+        PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+    }
+}
+```
+<sup>[snippet source](/src/Tests/Snippets/BindsWithoutError.cs#L33-L57)</sup>
 <!-- endsnippet -->
 
 
@@ -51,7 +74,7 @@ The bindings can be verified using the following:
 <!-- snippet: BindsWithoutError -->
 ```cs
 var viewModel = new ViewModel();
-var myBinding = new Binding(ViewModel.MyPropertyPropertyName)
+var myBinding = new Binding(nameof(ViewModel.MyProperty))
 {
     Source = viewModel
 };
@@ -65,7 +88,7 @@ var exception = ExceptionUtilities.GetException(
         }));
 Assert.Null(exception);
 ```
-<sup>[snippet source](/src/ApprovalTests.Wpf.Tests/Snippets.cs#L15-L32)</sup>
+<sup>[snippet source](/src/Tests/Snippets/BindsWithoutError.cs#L13-L30)</sup>
 <!-- endsnippet -->
 
 
