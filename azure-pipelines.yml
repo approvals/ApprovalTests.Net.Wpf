@@ -38,15 +38,15 @@ steps:
     configuration: '$(buildConfiguration)'
 
 
-- task: CopyFiles@2
-  inputs:
-    contents: '**\*.received.*'
-    targetFolder: '$(Build.ArtifactStagingDirectory)\received'
-- task: PublishBuildArtifacts@1
-  continueOnError: true
-  inputs:
-    pathtoPublish: '$(Build.ArtifactStagingDirectory)\received'
-    artifactName: received
+#- task: CopyFiles@2
+#  inputs:
+#    contents: '**\*.received.*'
+#    targetFolder: '$(Build.ArtifactStagingDirectory)\received'
+#- task: PublishBuildArtifacts@1
+#  continueOnError: true
+#  inputs:
+#    pathtoPublish: '$(Build.ArtifactStagingDirectory)\received'
+#    artifactName: received
 
 - task: CopyFiles@2
   inputs:
