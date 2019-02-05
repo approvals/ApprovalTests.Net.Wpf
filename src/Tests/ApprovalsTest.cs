@@ -1,7 +1,5 @@
-﻿using System.Threading;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using ApprovalTests.Reporters;
 using ApprovalTests.Wpf;
 using Xunit;
 
@@ -20,7 +18,6 @@ public class ApprovalsTest
     {
         WpfApprovals.Verify(() => new Window {Content = new Button {Content = "Hello from Lambdas"}, Width = 200, Height = 200});
     }
-
 
     [StaFact]
     public void TestContextMenu()

@@ -6,7 +6,7 @@ using ApprovalTests.Wpf;
 using ApprovalUtilities.Utilities;
 using Xunit;
 
-class BindsWithoutError2
+class BindsWithoutError
 {
     void TestFailedBindings()
     {
