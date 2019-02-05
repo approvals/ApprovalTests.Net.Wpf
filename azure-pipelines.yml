@@ -27,6 +27,10 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
+- task: CmdLine@2
+  inputs:
+    script: 'reg add HKEY_CURRENT_USER\Software\Microsoft\Tracing\WPF /v ManagedTracing /t REG_DWORD /d 1'
+
 - task: VSTest@2
   continueOnError: 'true'
   inputs:

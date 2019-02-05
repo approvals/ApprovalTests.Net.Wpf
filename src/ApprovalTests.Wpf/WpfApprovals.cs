@@ -26,7 +26,10 @@ namespace ApprovalTests.Wpf
 
         public static void Verify(Func<Window> windowCreator)
         {
-            Approvals.Verify(CreateWindowWpfWriter(windowCreator));
+            using (addAdditionalInfo())
+            {
+                Approvals.Verify(CreateWindowWpfWriter(windowCreator));
+            }
         }
 
         static IApprovalWriter CreateWindowWpfWriter(Func<Window> windowCreator)
@@ -36,7 +39,10 @@ namespace ApprovalTests.Wpf
 
         public static void Verify(Func<Control> action)
         {
-            Approvals.Verify(CreateControlWpfWriter(action));
+            using (addAdditionalInfo())
+            {
+                Approvals.Verify(CreateControlWpfWriter(action));
+            }
         }
 
         static IApprovalWriter CreateControlWpfWriter(Func<Control> action)

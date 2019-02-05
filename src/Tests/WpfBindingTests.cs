@@ -1,5 +1,4 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 using System.Windows.Controls;
@@ -11,28 +10,25 @@ using Xunit;
 
 public class WpfBindingTests
 {
-    [Fact]
+    [StaFact]
     public void TestFailedBindings()
     {
-        Exception e = null;
-        StaRunner.Start(() =>
+        var viewModel = new ViewModel();
+        var myBinding = new Binding(ViewModel.MyPropertyPropertyName + "BOGUS")
         {
-            var viewModel = new ViewModel();
-            var myBinding = new Binding(ViewModel.MyPropertyPropertyName + "BOGUS")
-            {
-                Source = viewModel
-            };
-            e = ExceptionUtilities.GetException(
-                () => WpfBindingsAssert.BindsWithoutError(viewModel,
-                    () =>
-                    {
-                        var textBox = new TextBox();
-                        textBox.SetBinding(TextBox.TextProperty, myBinding);
-                        return textBox;
-                    }));
-        });
+            Source = viewModel
+        };
+        var e = ExceptionUtilities.GetException(
+            () => WpfBindingsAssert.BindsWithoutError(viewModel,
+                () =>
+                {
+                    var textBox = new TextBox();
+                    textBox.SetBinding(TextBox.TextProperty, myBinding);
+                    return textBox;
+                }));
         Approvals.Verify(e.Message, s => Regex.Replace(s, @"\(HashCode=\d+\)", "(Hashcode)"));
     }
+
     class ViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged = delegate { };
