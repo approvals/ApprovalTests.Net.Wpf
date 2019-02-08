@@ -9,7 +9,7 @@
   <ItemGroup>
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.1" />
     <PackageReference Include="Xunit" Version="2.4.1" />
-    <PackageReference Include="CaptureSnippetsSimple" Version="8.6.4" />
+    <PackageReference Include="MarkdownSnippets" Version="8.6.8" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
     <PackageReference Include="Xunit.StaFact" Version="0.3.13" />
     <ProjectReference Include="..\ApprovalTests.Wpf\ApprovalTests.Wpf.csproj" />
