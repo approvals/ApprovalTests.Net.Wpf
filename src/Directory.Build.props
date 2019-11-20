@@ -5,7 +5,7 @@
     <NoWarn>CS1591</NoWarn>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>$(SolutionDir)\ApprovalsKeyPair.snk</AssemblyOriginatorKeyFile>
-    <Version>3.0.18</Version>
+    <Version>4.0.0</Version>
     <AssemblyVersion>3.0</AssemblyVersion>
     <NestApprovedFiles>true</NestApprovedFiles>
   </PropertyGroup>
