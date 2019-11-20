@@ -13,6 +13,7 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.4.0" />
     <PackageReference Include="Xunit.StaFact" Version="0.3.18" />
     <ProjectReference Include="..\ApprovalTests.Wpf\ApprovalTests.Wpf.csproj" />
+    <PackageReference Include="ApprovalTests" Version="4.4.0" />
     <Reference Include="System" />
     <Reference Include="System.Xaml" />
     <Reference Include="WindowsBase" />

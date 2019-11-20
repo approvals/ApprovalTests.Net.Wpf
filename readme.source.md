@@ -11,6 +11,7 @@ https://nuget.org/packages/ApprovalTests.Wpf/
 PM> Install-Package ApprovalTests.Wpf
 ```
 
+
 ## Usage
 
 Given the following binding model:

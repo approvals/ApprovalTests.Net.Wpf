@@ -1,7 +1,7 @@
 <!--
-This file was generate by the CaptureSnippets.
+This file was generate by the MarkdownSnippets.
 Source File: \readme.source.md
-To change this file edit the source file and then re-run the generation using either the dotnet global tool (https://github.com/SimonCropp/CaptureSnippets#githubmarkdownsnippets) or using the api (https://github.com/SimonCropp/CaptureSnippets#running-as-a-unit-test).
+To change this file edit the source file and then re-run the generation using either the dotnet global tool (https://github.com/SimonCropp/MarkdownSnippets#githubmarkdownsnippets) or using the api (https://github.com/SimonCropp/MarkdownSnippets#running-as-a-unit-test).
 -->
 
 # <img src="https://avatars3.githubusercontent.com/u/36907" height="30px"> ApprovalTests.Wpf
@@ -16,6 +16,7 @@ https://nuget.org/packages/ApprovalTests.Wpf/
 ```ps
 PM> Install-Package ApprovalTests.Wpf
 ```
+
 
 ## Usage
 

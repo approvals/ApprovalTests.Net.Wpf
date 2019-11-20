@@ -7,5 +7,6 @@
     <AssemblyOriginatorKeyFile>$(SolutionDir)\ApprovalsKeyPair.snk</AssemblyOriginatorKeyFile>
     <Version>3.0.18</Version>
     <AssemblyVersion>3.0</AssemblyVersion>
+    <NestApprovedFiles>true</NestApprovedFiles>
   </PropertyGroup>
 </Project>
