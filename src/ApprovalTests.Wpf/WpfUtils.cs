@@ -24,10 +24,8 @@ namespace ApprovalUtilities.Wpf
                 // Encoding the RenderBitmapTarget as a PNG file.
                 var png = new PngBitmapEncoder();
                 png.Frames.Add(BitmapFrame.Create(rtb));
-                using (Stream stm = File.Create(filename))
-                {
-                    png.Save(stm);
-                }
+                using Stream stm = File.Create(filename);
+                png.Save(stm);
             }
             finally
             {
@@ -39,6 +37,7 @@ namespace ApprovalUtilities.Wpf
         {
             return ScreenCaptureInStaThread(received, () => ScreenCapture(loader(), received));
         }
+
         public static string ScreenCaptureInStaThread(string received, Func<Control> loader)
         {
             return ScreenCaptureInStaThread(received, () => ScreenCapture(loader(), received));
@@ -85,10 +84,8 @@ namespace ApprovalUtilities.Wpf
             // Encoding the RenderBitmapTarget as a PNG file.
             var png = new PngBitmapEncoder();
             png.Frames.Add(BitmapFrame.Create(rtb));
-            using (Stream stm = File.Create(filename))
-            {
-                png.Save(stm);
-            }
+            using Stream stm = File.Create(filename);
+            png.Save(stm);
         }
     }
 }
