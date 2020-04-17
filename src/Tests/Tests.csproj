@@ -11,6 +11,6 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
     <PackageReference Include="Xunit.StaFact" Version="0.3.18" />
     <ProjectReference Include="..\ApprovalTests.Wpf\ApprovalTests.Wpf.csproj" />
-    <PackageReference Include="ApprovalTests" Version="5.0.0" />
+    <PackageReference Include="ApprovalTests" Version="5.0.3" />
   </ItemGroup>
 </Project>
